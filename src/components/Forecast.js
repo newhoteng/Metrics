@@ -1,20 +1,23 @@
 import { Link } from 'react-router-dom';
-// import { ImUser } from 'react-icons/im';
-// import styles from '../styles/NavBar.module.css';
+import { BsChevronLeft } from 'react-icons/bs';
+import { IoIosSettings } from 'react-icons/io';
+import { MdKeyboardVoice } from 'react-icons/md';
+import styles from '../styles/Current.module.css';
+// import styles from '../styles/NavBar.module.css'; BsArrowRightCircle, BsWind
 
 function Forecast() {
   return (
     <>
-      <nav>
-        <ul>
-          <li><Link to="/">arrow</Link></li>
-          <li>current</li>
-          <li>icons</li>
-        </ul>
-      </nav>
-      <div>Italy</div>
-      <div>Today</div>
-      <div>Tomorrow</div>
+      <header className={styles.header}>
+        <nav>
+          <Link to="/"><BsChevronLeft /></Link>
+        </nav>
+        <div>air quality</div>
+        <div>
+          <MdKeyboardVoice />
+          <IoIosSettings />
+        </div>
+      </header>
     </>
   );
 }

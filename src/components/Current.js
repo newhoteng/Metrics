@@ -1,32 +1,55 @@
 import { Link } from 'react-router-dom';
-// import { ImUser } from 'react-icons/im';
-// import styles from '../styles/NavBar.module.css';
-import { BsChevronLeft } from 'react-icons/bs';
-// import { BsArrowRightCircle } from "react-icons/bs"; , BsGearFill
+import { BsChevronLeft, BsArrowRightCircle, BsWind } from 'react-icons/bs';
 import { IoIosSettings } from 'react-icons/io';
 import { MdKeyboardVoice } from 'react-icons/md';
+// MdOutlineAir
+// MdAir
+// BsWind , BsGearFill
+// FaWind
+// import { WiDayWindy } from "react-icons/wi";
+
+import styles from '../styles/Current.module.css';
 
 function Current() {
   return (
     <>
-      <header>
+      <header className={styles.header}>
         <nav>
-          <div>
-            <div><BsChevronLeft /></div>
-            <div>Locations</div>
-          </div>
+          <BsChevronLeft />
+          <div>2023</div>
         </nav>
         <div>air quality</div>
-        <div><MdKeyboardVoice /></div>
-        {/* <div><BsGearFill /></div> */}
-        <div><IoIosSettings /></div>
+        <div>
+          <MdKeyboardVoice />
+          <IoIosSettings />
+          {/* <BsGearFill /> */}
+        </div>
       </header>
-      <div>Europe</div>
-      <div>STATS BY COUNTRY</div>
-      <div>
-        <Link to="/italy"><div>Italy</div></Link>
-        <Link to="/czech"><div>Czech Repubolic</div></Link>
-      </div>
+      <main className={styles.main}>
+        <div className={styles.hero}>
+          <div>Map</div>
+          <div>
+            <p>EUROPE</p>
+            <p>aqi: 3 - fair</p>
+          </div>
+        </div>
+        <div className={styles.banner}>STATS BY COUNTRY</div>
+        <div className={styles.countriesContainer}>
+          <Link to="/italy" className={styles.countryLink}>
+            <BsArrowRightCircle className={styles.arrowCircle} />
+            <BsWind className={styles.airIcon} />
+            {/* <MdOutlineAir className={styles.airIcon} /> */}
+            {/* <div>map or icon</div> */}
+            <div className={styles.linkText}>
+              <p>ITALY</p>
+              <p>aqi: 3 - fair</p>
+            </div>
+          </Link>
+          <Link to="/czech" className={styles.countryLink}><div>CZECH REPUBLIC</div></Link>
+          <Link to="/italy" className={styles.countryLink}><div>CROATIA</div></Link>
+          <Link to="/czech" className={styles.countryLink}><div>DENMARK</div></Link>
+        </div>
+      </main>
     </>
   );
 }

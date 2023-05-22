@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap');
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+}
+
+/* * {
+  font-family: 'Gill Sans';
+} */
+
+/* Pink */
+/* rgba(237,76,139,255) #ed4c8b header */
+/* rgba(252,81,147,255) #fc5193 hero */
+/* rgba(223,70,131,255) #df4683 stats by */
+/* rgba(221,71,130,255) #dd4782 czech */
+/* rgba(207,67,120,255) #cf4378 italy */
+/* rgba(176,56,104,255) #b03868 map */
+/* rgba(235,74,137,255) #eb4a89 prague */
+/* rgba(210,70,123,255) #d2467b ostrava */
+
+/* Blue */
+/* rgba(66,105,178,255) #4269b2 header */
+/* rgba(86,135,228,255) #5687e4 hero */
+/* rgba(53,84,139,255) #35548b stats by */
+/* rgba(64,102,172,255) #4066ac czech */
+/* rgba(61,96,161,255)  #3d60a1 italy */
+/* rgba(45,69,114,255) #2d4572 map */
+
+.header {
+  font-family: 'Lato', sans-serif;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0.3rem;
+  background-color: #ed4c8b;
+  color: #fff;
+}
+
+.header nav {
+  display: flex;
+  align-items: center;
+}
+
+nav div {
+  display: flex;
+  align-items: center;
+}
+
+.header > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  font-weight: 300;
+}
+
+.main {
+  font-family: 'Gill Sans';
+}
+
+.hero {
+  height: 25vh;
+  background-color: #fc5193;
+  color: #fff;
+  display: flex;
+}
+
+.hero div {
+  width: 50%;
+  line-height: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 2rem;
+}
+
+.hero p:first-child,
+.countryLink p:first-child {
+  font-weight: bold;
+}
+
+.banner {
+  background-color: #df4683;
+  color: #fff;
+  padding: 0.1rem 0.5rem;
+}
+
+.countriesContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.countryLink {
+  width: 50%;
+  height: 25vh;
+  text-decoration: none;
+  color: #fff;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  padding: 1.5rem 0.5rem;
+}
+
+.countriesContainer .countryLink:nth-child(odd) {
+  background-color: #dd4782;
+}
+
+.countriesContainer .countryLink:nth-child(even) {
+  background-color: #cf4378;
+}
+
+.arrowCircle {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+}
+
+.airIcon {
+  width: 100%;
+  height: 50%;
+  margin-bottom: 2rem;
+  color: grey;
+}
+
+.linkText {
+  text-align: end;
+  line-height: 1;
+}
