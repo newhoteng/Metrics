@@ -1,3 +1,5 @@
+import React from 'react';
+import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { BsChevronLeft, BsArrowRightCircle, BsWind } from 'react-icons/bs';
 import { IoIosSettings } from 'react-icons/io';
@@ -11,6 +13,16 @@ import { MdKeyboardVoice } from 'react-icons/md';
 import styles from '../styles/Current.module.css';
 
 function Current() {
+  const { currentAQIs } = useSelector((store) => store.currentAQIs);
+  console.log(currentAQIs);
+  // const dispatch = useDispatch();
+
+  // useEffect(() => {
+  //   if (!missions.length) {
+  //     dispatch(getMissions());
+  //   }
+  // }, [dispatch, missions]);
+
   return (
     <>
       <header className={styles.header}>

@@ -104,7 +104,7 @@ nav div {
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: end;
+  /* justify-content: flex-end; */
   padding: 1.5rem 0.5rem;
 }
 
@@ -132,4 +132,35 @@ nav div {
 .linkText {
   text-align: end;
   line-height: 1;
+}
+
+/* Forecast */
+
+.forecastContainer > div:nth-child(odd) {
+  background-color: #eb4a89;
+}
+
+.forecastContainer > div:nth-child(even) {
+  background-color: #d2467b;
+}
+
+.day {
+  color: #fff;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 0.5rem;
+}
+
+.day div {
+  /* border: 1px solid blue; */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.day > p {
+  font-weight: bold;
 }
