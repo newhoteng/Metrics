@@ -1,5 +1,8 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
+import { v4 as uuidv4 } from 'uuid';
+
+const apiKey = '64c5ba010daf9acaae687e9d64fb089e';
 
 const cities = {
   'New Delhi': [28.644800, 77.216721],
@@ -9,6 +12,9 @@ const cities = {
   Dubai: [25.276987, 55.296249],
   Berlin: [52.520008, 13.404954],
 };
+
+const Urls = Object.entries(cities).map((element) => [element[0], `http://api.openweathermap.org/data/2.5/air_pollution?lat=${element[1][0]}&lon=${element[1][1]}&appid=${apiKey}`]);
+
 // const colorScheme = {
 //   Good: '#9cd84e',
 //   Fair: '#facf38',
@@ -17,12 +23,7 @@ const cities = {
 //   VPoor: '#a070b6',
 // };
 
-// air pollution api
-const apiKey = '64c5ba010daf9acaae687e9d64fb089e';
-
 // const Url = `http://api.openweathermap.org/data/2.5/air_pollution?lat={lat}&lon={lon}&appid=${apiKey}`;
-
-// const Url = 'https://api.spacexdata.com/v3/missions';
 
 const initialState = {
   currentAQIs: [],
@@ -32,15 +33,14 @@ const initialState = {
 
 export const getCurrentAQIs = createAsyncThunk('currentAQIs/getCurrentAQIs', async (name, thunkAPI) => {
   try {
-    const retrievedData = [];
-    await Object.entries(cities).map(async (element) => {
-      const resp = await axios(`http://api.openweathermap.org/data/2.5/air_pollution?lat=${element[1][0]}&lon=${element[1][1]}&appid=${apiKey}`);
-      const { list } = resp;
-      const Obj = { name: element[0], aqi: list[0].main.aqi };
-      retrievedData.push(Obj);
-    });
-    // console.log(retrievedData);
-    return retrievedData;
+    const response = await axios.all(Urls.map((url) => axios.get(url[1])));
+    return response.map((each, index) => (
+      {
+        item_id: uuidv4(),
+        name: Urls[index][0],
+        aqi: each.data.list[0].main.aqi,
+      }
+    ));
   } catch (error) {
     return thunkAPI.rejectWithValue('something went wrong');
   }
