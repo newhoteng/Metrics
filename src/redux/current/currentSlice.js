@@ -5,25 +5,21 @@ import { v4 as uuidv4 } from 'uuid';
 const apiKey = '64c5ba010daf9acaae687e9d64fb089e';
 
 const cities = {
-  'New Delhi': [28.644800, 77.216721],
-  Accra: [5.614818, -0.205874],
-  Johannesburg: [-26.195246, 28.034088],
-  Brussels: [50.850346, 4.351721],
-  Dubai: [25.276987, 55.296249],
-  Berlin: [52.520008, 13.404954],
+  'NEW DELHI': [28.644800, 77.216721],
+  ACCRA: [5.614818, -0.205874],
+  JOHANNESBURG: [-26.195246, 28.034088],
+  BRUSSELS: [50.850346, 4.351721],
+  DUBAI: [25.276987, 55.296249],
+  BERLIN: [52.520008, 13.404954],
 };
 
 const Urls = Object.entries(cities).map((element) => [element[0], `http://api.openweathermap.org/data/2.5/air_pollution?lat=${element[1][0]}&lon=${element[1][1]}&appid=${apiKey}`]);
-
-// const colorScheme = {
-//   Good: '#9cd84e',
-//   Fair: '#facf38',
-//   Moderate: '#f99049',
-//   Poor: '#f65e5f',
-//   VPoor: '#a070b6',
-// };
-
-// const Url = `http://api.openweathermap.org/data/2.5/air_pollution?lat={lat}&lon={lon}&appid=${apiKey}`;
+const textValues = {
+  1: 'good', 2: 'fair', 3: 'moderate', 4: 'poor', 5: 'very poor',
+};
+const colorScheme = {
+  1: '#9cd84e', 2: '#facf38', 3: '#f99049', 4: '#f65e5f', 5: '#a070b6',
+};
 
 const initialState = {
   currentAQIs: [],
@@ -36,9 +32,12 @@ export const getCurrentAQIs = createAsyncThunk('currentAQIs/getCurrentAQIs', asy
     const response = await axios.all(Urls.map((url) => axios.get(url[1])));
     return response.map((each, index) => (
       {
-        item_id: uuidv4(),
+        id: uuidv4(),
         name: Urls[index][0],
         aqi: each.data.list[0].main.aqi,
+        textValue: textValues[each.data.list[0].main.aqi],
+        colorIndicator: colorScheme[each.data.list[0].main.aqi],
+        components: each.data.list[0].components,
       }
     ));
   } catch (error) {
@@ -50,20 +49,6 @@ const currentSlice = createSlice({
   name: 'currentAQIs',
   initialState,
   reducers: {
-    // joinMission: (state, action) => {
-    //   const itemId = action.payload;
-    //   state.missions = state.missions.map((mission) => {
-    //     if (mission.id !== itemId) return mission;
-    //     return { ...mission, reserved: true };
-    //   });
-    // },
-    // leaveMission: (state, action) => {
-    //   const itemId = action.payload;
-    //   state.missions = state.missions.map((mission) => {
-    //     if (mission.id !== itemId) return mission;
-    //     return { ...mission, reserved: false };
-    //   });
-    // },
   },
   extraReducers: (builder) => {
     // getCurrentAQIs

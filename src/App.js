@@ -1,16 +1,19 @@
+import { useSelector } from 'react-redux';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Current from './components/Current';
 import Forecast from './components/Forecast';
 import './App.css';
 
 function App() {
+  const { currentAQIs } = useSelector((store) => store.currentAQIs);
+
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Current />} />
-        <Route path="/italy" element={<Forecast />} />
-        <Route path="/czech" element={<Forecast />} />
-        <Route path="/*" element={<div>Page not found</div>} />
+        {currentAQIs.map((city) => (
+          <Route path={`/${city.name}`} key={city.id} element={<Forecast prop={city} />} />
+        ))}
       </Routes>
     </BrowserRouter>
   );

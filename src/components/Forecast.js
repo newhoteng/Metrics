@@ -1,17 +1,20 @@
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import { BsChevronLeft, BsArrowRightCircle } from 'react-icons/bs';
 import { IoIosSettings } from 'react-icons/io';
 import { MdKeyboardVoice } from 'react-icons/md';
 import styles from '../styles/Current.module.css';
 
-function Forecast() {
+const pollutantNames = [['so', '2'], ['no', '2'], ['pm', '10'], ['pm', '2_5'], ['o', '3'], ['co', '']];
+
+function Forecast({ prop }) {
   return (
     <>
       <header className={styles.header}>
         <nav>
           <Link to="/"><BsChevronLeft /></Link>
         </nav>
-        <div>air quality</div>
+        <div>pollutant concentration</div>
         <div>
           <MdKeyboardVoice />
           <IoIosSettings />
@@ -21,35 +24,41 @@ function Forecast() {
         <div className={styles.hero}>
           <div>Map</div>
           <div>
-            <p>ITALY</p>
-            <p>aqi: 3 - fair</p>
+            <p>{prop.name}</p>
+            <p>
+              aqi:
+              {' '}
+              {prop.aqi}
+              {' '}
+              -
+              {' '}
+              {prop.textValue}
+            </p>
           </div>
         </div>
-        <div className={styles.banner}>4-DAY FORECAST</div>
+        <div className={styles.banner}>
+          POLLUTANT CONCENTRATION(μg/m
+          <sup>3</sup>
+          )
+        </div>
         <div className={styles.forecastContainer}>
-          <div className={styles.day}>
-            <p>Today</p>
-            <div>
-              <p>aqi: 3 - fair</p>
-              <BsArrowRightCircle className={styles.forecastArrow} />
+          {pollutantNames.map((pollutant) => (
+            <div className={styles.day} key={`${pollutant[0]}${pollutant[1]}`}>
+              <p className={styles.chemName}>
+                {pollutant[0]}
+                <sub>{pollutant[1]}</sub>
+              </p>
+              <div>
+                <p>
+                  {(prop.components[`${pollutant[0]}${pollutant[1]}`]).toFixed(2)}
+                  {' '}
+                  μg/m
+                  <sup>3</sup>
+                </p>
+                <BsArrowRightCircle className={styles.forecastArrow} />
+              </div>
             </div>
-          </div>
-          {/* another */}
-          <div className={styles.day}>
-            <p>Tomorrow</p>
-            <div>
-              <p>aqi: 3 - fair</p>
-              <BsArrowRightCircle className={styles.forecastArrow} />
-            </div>
-          </div>
-          {/* another */}
-          <div className={styles.day}>
-            <p>Today</p>
-            <div>
-              <p>aqi: 3 - fair</p>
-              <BsArrowRightCircle className={styles.forecastArrow} />
-            </div>
-          </div>
+          ))}
         </div>
       </main>
     </>
@@ -57,3 +66,23 @@ function Forecast() {
 }
 
 export default Forecast;
+
+Forecast.propTypes = {
+  prop: PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    aqi: PropTypes.number.isRequired,
+    textValue: PropTypes.string.isRequired,
+    colorIndicator: PropTypes.string.isRequired,
+    components: PropTypes.shape({
+      co: PropTypes.number.isRequired,
+      no: PropTypes.number.isRequired,
+      no2: PropTypes.number.isRequired,
+      o3: PropTypes.number.isRequired,
+      so2: PropTypes.number.isRequired,
+      nh3: PropTypes.number.isRequired,
+      pm2_5: PropTypes.number.isRequired,
+      pm10: PropTypes.number.isRequired,
+    }).isRequired,
+  }).isRequired,
+};

@@ -7,6 +7,11 @@
   scroll-behavior: smooth;
 }
 
+Link {
+  text-decoration: none;
+  color: #fff;
+}
+
 /* * {
   font-family: 'Gill Sans';
 } */
@@ -163,4 +168,8 @@ nav div {
 
 .day > p {
   font-weight: bold;
+}
+
+.chemName {
+  text-transform: uppercase;
 }

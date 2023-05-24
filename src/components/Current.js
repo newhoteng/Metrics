@@ -15,9 +15,6 @@ import styles from '../styles/Current.module.css';
 
 function Current() {
   const { currentAQIs } = useSelector((store) => store.currentAQIs);
-
-  console.log(currentAQIs);
-
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -48,19 +45,24 @@ function Current() {
         </div>
         <div className={styles.banner}>STATS BY COUNTRY</div>
         <div className={styles.countriesContainer}>
-          <Link to="/italy" className={styles.countryLink}>
-            <BsArrowRightCircle className={styles.arrowCircle} />
-            <BsWind className={styles.airIcon} />
-            {/* <MdOutlineAir className={styles.airIcon} /> */}
-            {/* <div>map or icon</div> */}
-            <div className={styles.linkText}>
-              <p>ITALY</p>
-              <p>aqi: 3 - fair</p>
-            </div>
-          </Link>
-          <Link to="/czech" className={styles.countryLink}><div>CZECH REPUBLIC</div></Link>
-          <Link to="/italy" className={styles.countryLink}><div>CROATIA</div></Link>
-          <Link to="/czech" className={styles.countryLink}><div>DENMARK</div></Link>
+          {currentAQIs.map((city) => (
+            <Link to={`/${city.name}`} key={city.id} className={styles.countryLink}>
+              <BsArrowRightCircle className={styles.arrowCircle} />
+              <BsWind className={styles.airIcon} />
+              <div className={styles.linkText}>
+                <p>{city.name}</p>
+                <p>
+                  aqi:
+                  {' '}
+                  {city.aqi}
+                  {' '}
+                  -
+                  {' '}
+                  {city.textValue}
+                </p>
+              </div>
+            </Link>
+          ))}
         </div>
       </main>
     </>
