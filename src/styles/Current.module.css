@@ -7,32 +7,15 @@
   scroll-behavior: smooth;
 }
 
-Link {
+body {
+  color: #fff;
+  background-color: #fc5193;
+}
+
+a {
   text-decoration: none;
   color: #fff;
 }
-
-/* * {
-  font-family: 'Gill Sans';
-} */
-
-/* Pink */
-/* rgba(237,76,139,255) #ed4c8b header */
-/* rgba(252,81,147,255) #fc5193 hero */
-/* rgba(223,70,131,255) #df4683 stats by */
-/* rgba(221,71,130,255) #dd4782 czech */
-/* rgba(207,67,120,255) #cf4378 italy */
-/* rgba(176,56,104,255) #b03868 map */
-/* rgba(235,74,137,255) #eb4a89 prague */
-/* rgba(210,70,123,255) #d2467b ostrava */
-
-/* Blue */
-/* rgba(66,105,178,255) #4269b2 header */
-/* rgba(86,135,228,255) #5687e4 hero */
-/* rgba(53,84,139,255) #35548b stats by */
-/* rgba(64,102,172,255) #4066ac czech */
-/* rgba(61,96,161,255)  #3d60a1 italy */
-/* rgba(45,69,114,255) #2d4572 map */
 
 .header {
   font-family: 'Lato', sans-serif;
@@ -42,7 +25,10 @@ Link {
   justify-content: space-between;
   padding: 1rem 0.3rem;
   background-color: #ed4c8b;
-  color: #fff;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
 }
 
 .header nav {
@@ -68,10 +54,10 @@ nav div {
 }
 
 .hero {
-  height: 25vh;
+  height: 200px;
   background-color: #fc5193;
-  color: #fff;
   display: flex;
+  margin-top: 3rem;
 }
 
 .hero div {
@@ -90,7 +76,6 @@ nav div {
 
 .banner {
   background-color: #df4683;
-  color: #fff;
   padding: 0.1rem 0.5rem;
 }
 
@@ -103,21 +88,22 @@ nav div {
 
 .countryLink {
   width: 50%;
-  height: 25vh;
-  text-decoration: none;
-  color: #fff;
+  height: 200px;
   position: relative;
   display: flex;
   flex-direction: column;
-  /* justify-content: flex-end; */
   padding: 1.5rem 0.5rem;
 }
 
-.countriesContainer .countryLink:nth-child(odd) {
+.countriesContainer .countryLink:nth-child(1),
+.countriesContainer .countryLink:nth-child(4),
+.countriesContainer .countryLink:nth-child(5) {
   background-color: #dd4782;
 }
 
-.countriesContainer .countryLink:nth-child(even) {
+.countriesContainer .countryLink:nth-child(2),
+.countriesContainer .countryLink:nth-child(3),
+.countriesContainer .countryLink:nth-child(6) {
   background-color: #cf4378;
 }
 
@@ -131,7 +117,6 @@ nav div {
   width: 100%;
   height: 50%;
   margin-bottom: 2rem;
-  color: grey;
 }
 
 .linkText {
@@ -159,7 +144,6 @@ nav div {
 }
 
 .day div {
-  /* border: 1px solid blue; */
   display: flex;
   align-items: center;
   justify-content: space-between;

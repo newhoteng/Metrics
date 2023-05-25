@@ -5,21 +5,33 @@ import { BsChevronLeft, BsArrowRightCircle, BsWind } from 'react-icons/bs';
 import { IoIosSettings } from 'react-icons/io';
 import { MdKeyboardVoice } from 'react-icons/md';
 import { getCurrentAQIs } from '../redux/current/currentSlice';
-// MdOutlineAir useSelector,
-// MdAir
-// BsWind , BsGearFill
-// FaWind
-// import { WiDayWindy } from "react-icons/wi";
 
 import styles from '../styles/Current.module.css';
 
 function Current() {
-  const { currentAQIs } = useSelector((store) => store.currentAQIs);
+  const { currentAQIs, isLoading, error } = useSelector((store) => store.currentAQIs);
   const dispatch = useDispatch();
+
+  console.log(currentAQIs);
 
   useEffect(() => {
     dispatch(getCurrentAQIs());
   }, [dispatch]);
+
+  if (isLoading) {
+    return (
+      <div style={{ padding: '3rem' }}>
+        <h1>Loading...</h1>
+      </div>
+    );
+  }
+  if (error) {
+    return (
+      <div style={{ padding: '3rem' }}>
+        <h1>Something went wrong</h1>
+      </div>
+    );
+  }
 
   return (
     <>
@@ -37,18 +49,18 @@ function Current() {
       </header>
       <main className={styles.main}>
         <div className={styles.hero}>
-          <div>Map</div>
+          <div />
           <div>
-            <p>EUROPE</p>
-            <p>aqi: 3 - fair</p>
+            <p>SELECTED CITIES</p>
+            <p>air quality index</p>
           </div>
         </div>
-        <div className={styles.banner}>STATS BY COUNTRY</div>
+        <div className={styles.banner}>INDEX BY CITY</div>
         <div className={styles.countriesContainer}>
           {currentAQIs.map((city) => (
             <Link to={`/${city.name}`} key={city.id} className={styles.countryLink}>
               <BsArrowRightCircle className={styles.arrowCircle} />
-              <BsWind className={styles.airIcon} />
+              <BsWind className={styles.airIcon} style={{ color: `${city.colorIndicator}` }} />
               <div className={styles.linkText}>
                 <p>{city.name}</p>
                 <p>

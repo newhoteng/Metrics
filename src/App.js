@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Current from './components/Current';
-import Forecast from './components/Forecast';
+import Pollutants from './components/Pollutants';
 import './App.css';
 
 function App() {
@@ -12,7 +12,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Current />} />
         {currentAQIs.map((city) => (
-          <Route path={`/${city.name}`} key={city.id} element={<Forecast prop={city} />} />
+          <Route path={`/${city.name}`} key={city.id} element={<Pollutants prop={city} />} />
         ))}
       </Routes>
     </BrowserRouter>

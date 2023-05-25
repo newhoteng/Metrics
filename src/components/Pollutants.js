@@ -1,13 +1,13 @@
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import { BsChevronLeft, BsArrowRightCircle } from 'react-icons/bs';
+import { BsChevronLeft, BsArrowRightCircle, BsWind } from 'react-icons/bs';
 import { IoIosSettings } from 'react-icons/io';
 import { MdKeyboardVoice } from 'react-icons/md';
 import styles from '../styles/Current.module.css';
 
 const pollutantNames = [['so', '2'], ['no', '2'], ['pm', '10'], ['pm', '2_5'], ['o', '3'], ['co', '']];
 
-function Forecast({ prop }) {
+function Pollutants({ prop }) {
   return (
     <>
       <header className={styles.header}>
@@ -22,7 +22,9 @@ function Forecast({ prop }) {
       </header>
       <main className={styles.main}>
         <div className={styles.hero}>
-          <div>Map</div>
+          <div>
+            <BsWind className={styles.airIcon} style={{ color: `${prop.colorIndicator}` }} />
+          </div>
           <div>
             <p>{prop.name}</p>
             <p>
@@ -65,9 +67,9 @@ function Forecast({ prop }) {
   );
 }
 
-export default Forecast;
+export default Pollutants;
 
-Forecast.propTypes = {
+Pollutants.propTypes = {
   prop: PropTypes.shape({
     id: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
