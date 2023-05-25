@@ -44,7 +44,7 @@ Clicking on a city on the homepage directs users to a details page which lists t
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## :rocket: Live Demo <a name="live-demo"></a>
-- [Metrics](https://newhoteng.github.io/Bookstore/) Pending
+- [Metrics](https://metrics-59av.onrender.com/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -100,6 +100,7 @@ If you like this project follow me on GitHub.
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## :pray: Acknowledgements <a name="acknowledgements"></a>
+- Original design idea by Nelson Sakwa on Behance.
 - Thanks to Microverse for encouraging me to do this project.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
