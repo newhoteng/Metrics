@@ -44,7 +44,7 @@ Clicking on a city on the homepage directs users to a details page which lists t
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## :rocket: Live Demo <a name="live-demo"></a>
-- [Metrics](https://newhoteng.github.io/Bookstore/)
+- [Metrics](https://newhoteng.github.io/Bookstore/) Pending
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
