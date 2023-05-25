@@ -19,8 +19,9 @@
 - [📝 License](#license)
 
 #  :open_book: Metrics <a name="about-project"></a>
-Metrics is a single-page-application build with react and redux. It fetches air quality data for selected cities from an API and displays the cities with their corresponding air quality index (aqi) on the homepage.
+Metrics is a single-page-application built with react and redux. It fetches air quality data for selected cities from an API and displays the cities with their corresponding air quality index (aqi) on the homepage.
 Clicking on a city on the homepage directs users to a details page which lists the concentration of the various pollutants.
+[Project Presentation](https://www.loom.com/share/07ed6516058e4ce99520650861cc6ae5)
 
 ## :hammer_and_wrench: Built With <a name="built-with"></a>
 ### Tech Stack
