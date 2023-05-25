@@ -13,7 +13,7 @@ const cities = {
   BERLIN: [52.520008, 13.404954],
 };
 
-const Urls = Object.entries(cities).map((element) => [element[0], `http://api.openweathermap.org/data/2.5/air_pollution?lat=${element[1][0]}&lon=${element[1][1]}&appid=${apiKey}`]);
+const Urls = Object.entries(cities).map((element) => [element[0], `https://api.openweathermap.org/data/2.5/air_pollution?lat=${element[1][0]}&lon=${element[1][1]}&appid=${apiKey}`]);
 
 const textValues = {
   1: 'good', 2: 'fair', 3: 'moderate', 4: 'poor', 5: 'very poor',
