@@ -4,7 +4,7 @@ import { v4 as uuidv4 } from 'uuid';
 
 const apiKey = '64c5ba010daf9acaae687e9d64fb089e';
 
-export const cities = {
+const cities = {
   'NEW DELHI': [28.644800, 77.216721],
   ACCRA: [5.614818, -0.205874],
   JOHANNESBURG: [-26.195246, 28.034088],
@@ -30,6 +30,7 @@ const initialState = {
 export const getCurrentAQIs = createAsyncThunk('currentAQIs/getCurrentAQIs', async (name, thunkAPI) => {
   try {
     const response = await axios.all(Urls.map((url) => axios.get(url[1])));
+    console.log(response);
     return response.map((each, index) => (
       {
         id: uuidv4(),

@@ -12,11 +12,15 @@ function Current() {
   const { currentAQIs, isLoading, error } = useSelector((store) => store.currentAQIs);
   const dispatch = useDispatch();
 
-  console.log(currentAQIs);
-
   useEffect(() => {
     dispatch(getCurrentAQIs());
   }, [dispatch]);
+
+  // useEffect(() => {
+  //   if (!currentAQIs.length) {
+  //     dispatch(getCurrentAQIs());
+  //   }
+  // }, [dispatch, currentAQIs]);
 
   if (isLoading) {
     return (

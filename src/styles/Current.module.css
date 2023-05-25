@@ -50,7 +50,7 @@ nav div {
 }
 
 .main {
-  font-family: 'Gill Sans';
+  font-family: 'Gill Sans', sans-serif;
 }
 
 .hero {
@@ -67,6 +67,12 @@ nav div {
   flex-direction: column;
   justify-content: center;
   padding-left: 2rem;
+}
+
+/* Pollutants */
+
+.day > p {
+  font-weight: bold;
 }
 
 .hero p:first-child,
@@ -124,7 +130,14 @@ nav div {
   line-height: 1;
 }
 
-/* Forecast */
+/* Pollutants */
+
+.day div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
 
 .forecastContainer > div:nth-child(odd) {
   background-color: #eb4a89;
@@ -141,17 +154,6 @@ nav div {
   align-items: center;
   justify-content: space-between;
   padding: 1.5rem 0.5rem;
-}
-
-.day div {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-}
-
-.day > p {
-  font-weight: bold;
 }
 
 .chemName {
