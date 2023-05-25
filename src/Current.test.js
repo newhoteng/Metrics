@@ -2,15 +2,15 @@ import { render } from '@testing-library/react';
 import renderer from 'react-test-renderer';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
-import { store } from './redux/store';
 import configureStore from 'redux-mock-store';
-import thunk from 'redux-thunk'; // Import redux-thunk middleware
+import thunk from 'redux-thunk';
+import { store } from './redux/store';
 import { getCurrentAQIs } from './redux/current/currentSlice';
 
 // Component imports
 import Current from './components/Current';
 
-const mockStore = configureStore([thunk]); // Apply middleware
+const mockStore = configureStore([thunk]);
 
 jest.setTimeout(15000);
 
@@ -36,7 +36,6 @@ describe('Current component', () => {
     expect(container).toMatchSnapshot();
   });
 });
-
 
 it('current aqi page renders correctly', () => {
   const currentAQIPage = renderer
