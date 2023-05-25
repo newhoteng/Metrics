@@ -31,7 +31,6 @@ const initialState = {
 export const getCurrentAQIs = createAsyncThunk('currentAQIs/getCurrentAQIs', async (name, thunkAPI) => {
   try {
     const response = await axios.all(Urls.map((url) => axios.get(url[1])));
-    console.log(response);
     return response.map((each, index) => (
       {
         id: uuidv4(),
