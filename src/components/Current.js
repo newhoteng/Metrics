@@ -13,14 +13,10 @@ function Current() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getCurrentAQIs());
-  }, [dispatch]);
-
-  // useEffect(() => {
-  //   if (!currentAQIs.length) {
-  //     dispatch(getCurrentAQIs());
-  //   }
-  // }, [dispatch, currentAQIs]);
+    if (!currentAQIs.length) {
+      dispatch(getCurrentAQIs());
+    }
+  }, [dispatch, currentAQIs]);
 
   if (isLoading) {
     return (
@@ -48,7 +44,6 @@ function Current() {
         <div>
           <MdKeyboardVoice />
           <IoIosSettings />
-          {/* <BsGearFill /> */}
         </div>
       </header>
       <main className={styles.main}>

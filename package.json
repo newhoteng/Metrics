@@ -2,6 +2,11 @@
   "name": "metrics",
   "version": "0.1.0",
   "private": true,
+  "jest": {
+    "moduleNameMapper": {
+      "axios": "axios/dist/node/axios.cjs"
+    }
+  },
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.5",
     "@testing-library/jest-dom": "^5.16.5",
@@ -12,12 +17,12 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.8.0",
-    "react-native-svg": "^13.9.0",
-    "react-native-svg-transformer": "^1.0.0",
     "react-redux": "^8.0.5",
     "react-router-dom": "^6.11.2",
     "react-scripts": "5.0.1",
+    "react-test-renderer": "^18.2.0",
     "redux-logger": "^3.0.6",
+    "user-event": "^4.0.0",
     "uuid": "^9.0.0",
     "web-vitals": "^2.1.4"
   },
