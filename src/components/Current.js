@@ -1,10 +1,11 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { BsChevronLeft, BsArrowRightCircle, BsWind } from 'react-icons/bs';
+import { BsArrowRightCircle, BsWind } from 'react-icons/bs';
 import { IoIosSettings } from 'react-icons/io';
 import { MdKeyboardVoice } from 'react-icons/md';
 import { getCurrentAQIs } from '../redux/current/currentSlice';
+// BsChevronLeft
 
 import styles from '../styles/Current.module.css';
 
@@ -36,11 +37,7 @@ function Current() {
   return (
     <>
       <header className={styles.header}>
-        <nav>
-          <BsChevronLeft />
-          <div>2023</div>
-        </nav>
-        <div>air quality</div>
+        <div>current air quality</div>
         <div>
           <MdKeyboardVoice />
           <IoIosSettings />

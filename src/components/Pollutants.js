@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import { BsChevronLeft, BsArrowRightCircle, BsWind } from 'react-icons/bs';
+import { BsChevronLeft, BsWind } from 'react-icons/bs';
 import { IoIosSettings } from 'react-icons/io';
 import { MdKeyboardVoice } from 'react-icons/md';
 import styles from '../styles/Current.module.css';
@@ -57,7 +57,6 @@ function Pollutants({ prop }) {
                   μg/m
                   <sup>3</sup>
                 </p>
-                <BsArrowRightCircle className={styles.forecastArrow} />
               </div>
             </div>
           ))}
