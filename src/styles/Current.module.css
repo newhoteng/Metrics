@@ -82,7 +82,9 @@ nav div {
 
 .banner {
   background-color: #df4683;
-  padding: 0.1rem 0.5rem;
+  padding: 0.2rem 0.5rem;
+  display: flex;
+  align-items: center;
 }
 
 .countriesContainer {
@@ -158,4 +160,21 @@ nav div {
 
 .chemName {
   text-transform: uppercase;
+}
+
+@media all and (min-width: 768px) {
+  html {
+    font-size: 18px;
+  }
+
+  .mainContainer {
+    position: relative;
+    border: 2px solid #ed4c8b;
+    width: 750px;
+    margin: 0 auto;
+  }
+
+  .header {
+    position: absolute;
+  }
 }

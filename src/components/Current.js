@@ -35,7 +35,7 @@ function Current() {
   }
 
   return (
-    <>
+    <div className={styles.mainContainer}>
       <header className={styles.header}>
         <div>current air quality</div>
         <div>
@@ -73,7 +73,7 @@ function Current() {
           ))}
         </div>
       </main>
-    </>
+    </div>
   );
 }
 

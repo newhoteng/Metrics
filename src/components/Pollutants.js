@@ -9,7 +9,7 @@ const pollutantNames = [['so', '2'], ['no', '2'], ['pm', '10'], ['pm', '2_5'], [
 
 function Pollutants({ prop }) {
   return (
-    <>
+    <div className={styles.mainContainer}>
       <header className={styles.header}>
         <nav>
           <Link to="/"><BsChevronLeft /></Link>
@@ -62,7 +62,7 @@ function Pollutants({ prop }) {
           ))}
         </div>
       </main>
-    </>
+    </div>
   );
 }
 
