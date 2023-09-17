@@ -27,7 +27,7 @@ Clicking on a city on the homepage directs users to a details page which lists t
 ### Tech Stack
 <details><summary>Client</summary>
 <ul>
-  <li><a href="https://html.com/">React</a></li>
+  <li><a href="https://react.dev/">React</a></li>
 </ul>
 </details>
 <details><summary>Backend</summary>
