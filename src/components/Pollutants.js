@@ -26,7 +26,7 @@ function Pollutants({ prop }) {
             <BsWind className={styles.airIcon} style={{ color: `${prop.colorIndicator}` }} />
           </div>
           <div>
-            <p>{prop.name}</p>
+            <p>{prop.name.toUpperCase()}</p>
             <p>
               aqi:
               {' '}

@@ -58,7 +58,7 @@ function Current() {
               <BsArrowRightCircle className={styles.arrowCircle} />
               <BsWind className={styles.airIcon} style={{ color: `${city.colorIndicator}` }} />
               <div className={styles.linkText}>
-                <p>{city.name}</p>
+                <p>{city.name.toUpperCase()}</p>
                 <p>
                   aqi:
                   {' '}

@@ -1,4 +1,4 @@
-export default function HeroSection(image, mainText, secondaryText) {
+export default function HeroSection({ image, mainText, secondaryText }) {
   return (
     <div className={styles.hero}>
       <div>{image}</div>

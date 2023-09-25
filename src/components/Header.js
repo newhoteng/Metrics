@@ -2,7 +2,7 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import { IoIosSettings } from 'react-icons/io';
 import { MdKeyboardVoice } from 'react-icons/md';
 
-export default function Header(homePageTitle) {
+export default function Header({ homePageTitle }) {
   const navigate = useNavigate();
   const location = useLocation();
 

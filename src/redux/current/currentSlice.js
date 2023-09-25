@@ -5,12 +5,12 @@ import { v4 as uuidv4 } from 'uuid';
 const apiKey = '64c5ba010daf9acaae687e9d64fb089e';
 
 const cities = {
-  'NEW DELHI': [28.644800, 77.216721],
-  ACCRA: [5.614818, -0.205874],
-  JOHANNESBURG: [-26.195246, 28.034088],
-  BRUSSELS: [50.850346, 4.351721],
-  DUBAI: [25.276987, 55.296249],
-  BERLIN: [52.520008, 13.404954],
+  'new delhi': [28.644800, 77.216721],
+  accra: [5.614818, -0.205874],
+  johannesburg: [-26.195246, 28.034088],
+  brussels: [50.850346, 4.351721],
+  dubai: [25.276987, 55.296249],
+  berlin: [52.520008, 13.404954],
 };
 
 const Urls = Object.entries(cities).map((element) => [element[0], `https://api.openweathermap.org/data/2.5/air_pollution?lat=${element[1][0]}&lon=${element[1][1]}&appid=${apiKey}`]);
