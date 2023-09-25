@@ -19,4 +19,18 @@ function App() {
   );
 }
 
+// function App() {
+//   return (
+//     <BrowserRouter>
+//       <Routes>
+//         <Route path="/" element={<Header />}>
+//           <Route index element={<Homepage />} />
+//           <Route path="/:city" element={<Pollutants />} />
+//           <Route path="/*" element={<div>Page not found</div>} />
+//         </Route>
+//       </Routes>
+//     </BrowserRouter>
+//   );
+// }
+
 export default App;
