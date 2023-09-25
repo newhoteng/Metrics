@@ -2,20 +2,27 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import { IoIosSettings } from 'react-icons/io';
 import { MdKeyboardVoice } from 'react-icons/md';
 
-export default function Nav() {
+export default function Header(homePageTitle) {
   const navigate = useNavigate();
+  const location = useLocation();
+
   const pathName = window.location.pathname;
 
-  const changeTitle = () => {
-    switch(window.location.pathname){
-      case '/':
-        return 'current air quality';
-      case `/${city.name}`:
-        return 'pollutants';
-    }
+  let pageTitle = homePageTitle;
+  if (location.state?.pageTitle) {
+    pageTitle = location.state?.pageTitle;
   }
 
-  let pageTitle = changeTitle();
+  // const changeTitle = () => {
+  //   switch(window.location.pathname){
+  //     case '/':
+  //       return 'current air quality';
+  //     case '/:city':
+  //       return 'pollutants';
+  //   }
+  // }
+
+  // let pageTitle = changeTitle();
   return (
     <header className={styles.header}>
       {pathName !== '/' ?
