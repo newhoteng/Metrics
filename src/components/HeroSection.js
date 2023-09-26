@@ -1,11 +1,11 @@
 export default function HeroSection({ image, mainText, secondaryText }) {
   return (
-    <div className={styles.hero}>
+    <seciton className={styles.hero}>
       <div>{image}</div>
       <div>
         <p>{mainText}</p>
         <p>{secondaryText}</p>
       </div>
-    </div>
+    </seciton>
   );
 }
