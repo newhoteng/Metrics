@@ -1,5 +1,6 @@
 // import Current from './components/Current';
-import City from './City'
+import City from './City';
+import styles from '../styles/Current.module.css';
 
 export default function({ cities }) {
   return (

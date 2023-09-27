@@ -1,3 +1,5 @@
+import styles from '../styles/Current.module.css';
+
 export default function HeroSection({ image, mainText, secondaryText }) {
   return (
     <seciton className={styles.hero}>

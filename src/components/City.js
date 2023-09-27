@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { BsArrowRightCircle, BsWind } from 'react-icons/bs';
+import styles from '../styles/Current.module.css';
 
 export default function City({ city }) {
   let airQualityDesc = `aqi: ${city.aqi} - ${city.textValue}`
