@@ -5,8 +5,8 @@ export default function HeroSection({ image, mainText, secondaryText }) {
     <seciton className={styles.hero}>
       <div>{image}</div>
       <div>
-        <p>{mainText}</p>
-        <p>{secondaryText}</p>
+        <p>{mainText.toUpperCase()}</p>
+        <p>{secondaryText.toLowerCase()}</p>
       </div>
     </seciton>
   );
