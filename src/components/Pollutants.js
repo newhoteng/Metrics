@@ -48,7 +48,7 @@ function Pollutants({ prop }) {
             <div className={styles.day} key={`${pollutant[0]}${pollutant[1]}`}>
               <p className={styles.chemName}>
                 {pollutant[0]}
-                <sub>{pollutant[1]}</sub>
+                {pollutant[1].includes('_') ? <sub>{pollutant[1].replace('_', '.')}</sub> : <sub>{pollutant[1]}</sub>}
               </p>
               <div>
                 <p>
