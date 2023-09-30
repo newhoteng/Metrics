@@ -1,6 +1,8 @@
 import { useNavigate, useLocation } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import { IoIosSettings } from 'react-icons/io';
 import { MdKeyboardVoice } from 'react-icons/md';
+import { BsChevronLeft } from 'react-icons/bs';
 import styles from '../styles/Current.module.css';
 
 export default function Header({ homePageTitle }) {
@@ -11,6 +13,7 @@ export default function Header({ homePageTitle }) {
 
   let pageTitle = homePageTitle;
   if (location.state?.pageTitle) {
+    console.log(location.state.pageTitle);
     pageTitle = location.state?.pageTitle;
   }
 
@@ -23,14 +26,15 @@ export default function Header({ homePageTitle }) {
   //   }
   // }
 
-  // let pageTitle = changeTitle();
+  // const pageTitle = changeTitle();
   return (
     <header className={styles.header}>
-      {pathName !== '/' ?
-        <nav>
-          <BsChevronLeft onClick={() => navigate(-1)} />
-        </nav> : null
-      }
+      {pathName !== '/'
+        ? (
+          <nav>
+            <BsChevronLeft onClick={() => navigate(-1)} />
+          </nav>
+        ) : null}
       <div>{pageTitle}</div>
       <div>
         <MdKeyboardVoice />
@@ -39,3 +43,7 @@ export default function Header({ homePageTitle }) {
     </header>
   );
 }
+
+Header.propTypes = {
+  homePageTitle: PropTypes.string.isRequired,
+};

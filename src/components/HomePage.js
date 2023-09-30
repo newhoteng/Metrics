@@ -2,16 +2,15 @@ import AirQDataContainer from './AirQDataContainer';
 import HeroSection from './HeroSection';
 
 const Homepage = () => {
-  image = '';
-  mainText = 'selected cities';
-  secondaryText = 'air quality index';
+  const image = '';
+  const mainText = 'selected cities';
+  const secondaryText = 'air quality index';
   return (
     <main>
       <HeroSection image={image} mainText={mainText} secondaryText={secondaryText} />
       <AirQDataContainer />
     </main>
-  )
-}
+  );
+};
 
-  export default Homepage;
-  
+export default Homepage;

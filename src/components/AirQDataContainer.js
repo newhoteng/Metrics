@@ -26,5 +26,5 @@ export default function AirQDataContainer() {
         <CityList cities={currentAQIs} />
       )}
     </>
-  )
+  );
 }

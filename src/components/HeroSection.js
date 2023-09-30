@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import styles from '../styles/Current.module.css';
 
 export default function HeroSection({ image, mainText, secondaryText }) {
@@ -11,3 +12,9 @@ export default function HeroSection({ image, mainText, secondaryText }) {
     </seciton>
   );
 }
+
+HeroSection.propTypes = {
+  image: PropTypes.string.isRequired,
+  mainText: PropTypes.string.isRequired,
+  secondaryText: PropTypes.string.isRequired,
+};
