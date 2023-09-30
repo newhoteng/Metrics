@@ -1,5 +1,5 @@
 import AirQDataContainer from './AirQDataContainer';
-import HeroSection from './HeroSection'
+import HeroSection from './HeroSection';
 
 const Homepage = () => {
   image = '';

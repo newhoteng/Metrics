@@ -1,7 +1,6 @@
 import { useNavigate, useLocation } from 'react-router-dom';
 import { IoIosSettings } from 'react-icons/io';
 import { MdKeyboardVoice } from 'react-icons/md';
-// import styles from '../styles/Current.module.css';
 import styles from '../styles/Current.module.css';
 
 export default function Header({ homePageTitle }) {
