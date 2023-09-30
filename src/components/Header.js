@@ -13,20 +13,9 @@ export default function Header({ homePageTitle }) {
 
   let pageTitle = homePageTitle;
   if (location.state?.pageTitle) {
-    console.log(location.state.pageTitle);
     pageTitle = location.state?.pageTitle;
   }
 
-  // const changeTitle = () => {
-  //   switch(window.location.pathname){
-  //     case '/':
-  //       return 'current air quality';
-  //     case '/:city':
-  //       return 'pollutants';
-  //   }
-  // }
-
-  // const pageTitle = changeTitle();
   return (
     <header className={styles.header}>
       {pathName !== '/'
@@ -47,3 +36,22 @@ export default function Header({ homePageTitle }) {
 Header.propTypes = {
   homePageTitle: PropTypes.string.isRequired,
 };
+
+// export default function Header() {
+//   return (
+//     <header className={styles.header}>
+//       <h1>NAV</h1>
+//     </header>
+//   );
+// }
+
+// const changeTitle = () => {
+//   switch(window.location.pathname){
+//     case '/':
+//       return 'current air quality';
+//     case '/:city':
+//       return 'pollutants';
+//   }
+// }
+
+// const pageTitle = changeTitle();

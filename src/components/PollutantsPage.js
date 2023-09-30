@@ -17,7 +17,7 @@ const PollutantsPage = () => {
   const secondaryText = `aqi: ${selectedCity.aqi} - ${selectedCity.textValue}`;
 
   return (
-    <main>
+    <main className={styles.main}>
       <HeroSection image={image} mainText={mainText} secondaryText={secondaryText} />
       <PollutantsList city={selectedCity} />
     </main>

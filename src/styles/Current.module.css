@@ -7,9 +7,20 @@
   scroll-behavior: smooth;
 }
 
+/* .testing {
+  height: 100vh;
+  width: 100%;
+  border: 5px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: black;
+} */
+
 body {
   color: #fff;
   background-color: #fc5193;
+  /* background-color: seashell; */
 }
 
 a {
@@ -24,11 +35,12 @@ a {
   align-items: center;
   justify-content: space-between;
   padding: 1rem 0.3rem;
-  background-color: #ed4c8b;
+  /* background-color: #ed4c8b; */
   position: fixed;
   width: 100%;
   top: 0;
   left: 0;
+  border: 5px solid blue;
 }
 
 .header nav {

@@ -31,26 +31,28 @@ export default function CityList({ cities }) {
   );
 }
 
-City.propTypes = {
-  city: PropTypes.shape({
-    id: PropTypes.string.isRequired,
-    name: PropTypes.string.isRequired,
-    aqi: PropTypes.number.isRequired,
-    textValue: PropTypes.string.isRequired,
-    colorIndicator: PropTypes.string.isRequired,
-    components: PropTypes.shape({
-      co: PropTypes.number.isRequired,
-      no: PropTypes.number.isRequired,
-      no2: PropTypes.number.isRequired,
-      o3: PropTypes.number.isRequired,
-      so2: PropTypes.number.isRequired,
-      nh3: PropTypes.number.isRequired,
-      pm2_5: PropTypes.number.isRequired,
-      pm10: PropTypes.number.isRequired,
-    }).isRequired,
+const dataShape = PropTypes.shape({
+  id: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  aqi: PropTypes.number.isRequired,
+  textValue: PropTypes.string.isRequired,
+  colorIndicator: PropTypes.string.isRequired,
+  components: PropTypes.shape({
+    co: PropTypes.number.isRequired,
+    no: PropTypes.number.isRequired,
+    no2: PropTypes.number.isRequired,
+    o3: PropTypes.number.isRequired,
+    so2: PropTypes.number.isRequired,
+    nh3: PropTypes.number.isRequired,
+    pm2_5: PropTypes.number.isRequired,
+    pm10: PropTypes.number.isRequired,
   }).isRequired,
+});
+
+City.propTypes = {
+  city: dataShape.isRequired,
 };
 
 CityList.propTypes = {
-  cities: PropTypes.arrayOf(PropTypes.city).isRequired,
+  cities: PropTypes.arrayOf(dataShape).isRequired,
 };
