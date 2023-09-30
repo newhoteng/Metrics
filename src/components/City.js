@@ -6,7 +6,7 @@ export default function City({ city }) {
   let airQualityDesc = `aqi: ${city.aqi} - ${city.textValue}`
 
   return (
-    <Link to={`/${city.name}`} state={{ pageTitle: 'pollutant concentration' }} className={styles.countryLink}>
+    <Link to={`/${city.name}`} state={{ pageTitle: 'pollutant concentration', city: city }} className={styles.countryLink}>
       <BsArrowRightCircle className={styles.arrowCircle} />
       <BsWind className={styles.airIcon} style={{ color: `${city.colorIndicator}` }} />
       <div className={styles.linkText}>

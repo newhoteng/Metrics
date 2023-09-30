@@ -25,7 +25,7 @@ function App() {
 //       <Routes>
 //         <Route path="/" element={<Header />}>
 //           <Route index element={<Homepage />} />
-//           <Route path="/:city" element={<Pollutants />} />
+//           <Route path="/:cityName" element={<Pollutants />} />
 //           <Route path="/*" element={<div>Page not found</div>} />
 //         </Route>
 //       </Routes>

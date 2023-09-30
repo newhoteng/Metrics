@@ -1,3 +1,5 @@
+import styles from '../styles/Current.module.css';
+
 export function PollutantRow({pollutantName, value, unit}) {
   const amount = `${value} ${unit}`
   
