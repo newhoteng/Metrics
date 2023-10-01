@@ -41,6 +41,7 @@ a {
   top: 0;
   left: 0;
   border: 5px solid blue;
+  z-index: -1;
 }
 
 .header nav {
@@ -63,6 +64,7 @@ nav div {
 
 .main {
   font-family: 'Gill Sans', sans-serif;
+  border: 5px solid black;
 }
 
 .hero {

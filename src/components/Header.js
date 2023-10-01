@@ -1,5 +1,6 @@
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useNavigate, useLocation, Outlet } from 'react-router-dom';
 import PropTypes from 'prop-types';
+// import { Outlet } from 'react-router-dom';
 import { IoIosSettings } from 'react-icons/io';
 import { MdKeyboardVoice } from 'react-icons/md';
 import { BsChevronLeft } from 'react-icons/bs';
@@ -17,19 +18,22 @@ export default function Header({ homePageTitle }) {
   }
 
   return (
-    <header className={styles.header}>
-      {pathName !== '/'
-        ? (
-          <nav>
-            <BsChevronLeft onClick={() => navigate(-1)} />
-          </nav>
-        ) : null}
-      <div>{pageTitle}</div>
-      <div>
-        <MdKeyboardVoice />
-        <IoIosSettings />
-      </div>
-    </header>
+    <>
+      <header className={styles.header}>
+        {pathName !== '/'
+          ? (
+            <nav>
+              <BsChevronLeft onClick={() => navigate(-1)} />
+            </nav>
+          ) : null}
+        <div>{pageTitle}</div>
+        <div>
+          <MdKeyboardVoice />
+          <IoIosSettings />
+        </div>
+      </header>
+      <Outlet />
+    </>
   );
 }
 
