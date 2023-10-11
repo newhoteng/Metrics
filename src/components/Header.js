@@ -1,4 +1,4 @@
-import { useNavigate, useLocation, Outlet } from 'react-router-dom';
+import { Link, useLocation, Outlet } from 'react-router-dom';
 import PropTypes from 'prop-types';
 // import { Outlet } from 'react-router-dom';
 import { IoIosSettings } from 'react-icons/io';
@@ -7,7 +7,7 @@ import { BsChevronLeft } from 'react-icons/bs';
 import styles from '../styles/Current.module.css';
 
 export default function Header({ homePageTitle }) {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const location = useLocation();
 
   const pathName = window.location.pathname;
@@ -22,8 +22,11 @@ export default function Header({ homePageTitle }) {
       <header className={styles.header}>
         {pathName !== '/'
           ? (
+            // <nav>
+            //   <BsChevronLeft onClick={() => navigate(-1)} />
+            // </nav>
             <nav>
-              <BsChevronLeft onClick={() => navigate(-1)} />
+              <Link to="/"><BsChevronLeft /></Link>
             </nav>
           ) : null}
         <div>{pageTitle}</div>

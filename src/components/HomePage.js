@@ -3,12 +3,12 @@ import HeroSection from './HeroSection';
 import styles from '../styles/Current.module.css';
 
 const HomePage = () => {
-  const image = '';
+  // const image = '';
   const mainText = 'selected cities';
   const secondaryText = 'air quality index';
   return (
     <main className={styles.main}>
-      <HeroSection image={image} mainText={mainText} secondaryText={secondaryText} />
+      <HeroSection mainText={mainText} secondaryText={secondaryText} />
       <AirQDataContainer />
     </main>
   );

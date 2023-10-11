@@ -12,13 +12,12 @@ const PollutantsPage = () => {
 
   const selectedCity = currentAQIs.find((city) => city.name === cityName);
 
-  const image = `${<BsWind className={styles.airIcon} style={{ color: `${selectedCity.colorIndicator}` }} />}`;
   const mainText = cityName;
   const secondaryText = `aqi: ${selectedCity.aqi} - ${selectedCity.textValue}`;
 
   return (
     <main className={styles.main}>
-      <HeroSection image={image} mainText={mainText} secondaryText={secondaryText} />
+      <HeroSection image={<BsWind className={styles.airIcon} style={{ color: `${selectedCity.colorIndicator}` }} />} mainText={mainText} secondaryText={secondaryText} />
       <PollutantsList city={selectedCity} />
     </main>
   );

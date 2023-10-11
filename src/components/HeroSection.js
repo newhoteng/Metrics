@@ -14,7 +14,11 @@ export default function HeroSection({ image, mainText, secondaryText }) {
 }
 
 HeroSection.propTypes = {
-  image: PropTypes.string.isRequired,
+  image: PropTypes.element,
   mainText: PropTypes.string.isRequired,
   secondaryText: PropTypes.string.isRequired,
+};
+
+HeroSection.defaultProps = {
+  image: '',
 };
