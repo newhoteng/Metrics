@@ -1,17 +1,20 @@
 import PropTypes from 'prop-types';
 import styles from '../styles/Current.module.css';
 
-export function PollutantRow({ pollutantName, value, unit }) {
-  const amount = `${value} ${unit}`;
-
+export function PollutantRow({ pollutantName, value }) {
   return (
     <div className={styles.day}>
       <p className={styles.chemName}>
-        {pollutantName}
-        {/* <sub>{pollutant[1]}</sub> */}
+        {pollutantName[0]}
+        {pollutantName[1].includes('_') ? <sub>{pollutantName[1].replace('_', '.')}</sub> : <sub>{pollutantName[1]}</sub>}
       </p>
       <div>
-        <p>{amount}</p>
+        <p>
+          {value.toFixed(2)}
+          {' '}
+          μg/m
+          <sup>3</sup>
+        </p>
       </div>
     </div>
   );
@@ -22,10 +25,8 @@ export default function PollutantsList({ city }) {
 
   const pollutantRows = pollutants.map((pollutant) => (
     <PollutantRow
-      pollutantName={`${pollutant[0]}
-      ${pollutant[1].includes('_') ? <sub>{pollutant[1].replace('_', '.')}</sub> : <sub>{pollutant[1]}</sub>}`}
-      value={(city.components[`${pollutant[0]}${pollutant[1]}`]).toFixed(2)}
-      unit={`ug/m${<sup>3</sup>}`}
+      pollutantName={pollutant}
+      value={city?.components[`${pollutant[0]}${pollutant[1]}`]}
       key={`${pollutant[0]}${pollutant[1]}`}
     />
   ));
@@ -42,10 +43,10 @@ export default function PollutantsList({ city }) {
   );
 }
 
+// Prop validations
 PollutantRow.propTypes = {
-  pollutantName: PropTypes.string.isRequired,
-  value: PropTypes.string.isRequired,
-  unit: PropTypes.string.isRequired,
+  pollutantName: PropTypes.arrayOf(PropTypes.string).isRequired,
+  value: PropTypes.number.isRequired,
 };
 
 PollutantsList.propTypes = {
@@ -67,9 +68,3 @@ PollutantsList.propTypes = {
     }).isRequired,
   }).isRequired,
 };
-
-// HeroSection.propTypes = {
-//   image: PropTypes.string.isRequired,
-//   mainText: PropTypes.string.isRequired,
-//   secondaryText: PropTypes.string.isRequired,
-// };
