@@ -26,7 +26,9 @@ export default function CityList({ cities }) {
   return (
     <section>
       <div className={styles.banner}>INDEX BY CITY</div>
-      {cities.map((city) => <City key={city.id} city={city} />)}
+      <div className={styles.countriesContainer}>
+        {cities.map((city) => <City key={city.id} city={city} />)}
+      </div>
     </section>
   );
 }

@@ -7,20 +7,13 @@
   scroll-behavior: smooth;
 }
 
-/* .testing {
-  height: 100vh;
-  width: 100%;
-  border: 5px solid black;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: black;
-} */
-
 body {
   color: #fff;
-  /* background-color: #fc5193; */
+  background-color: #fc5193;
   background-color: seashell;
+  /* border: 5px solid greenyellow; */
+  max-width: 750px;
+  margin: 0 auto;
 }
 
 a {
@@ -29,6 +22,7 @@ a {
 }
 
 .header {
+  background-color: #fc5193;
   font-family: 'Lato', sans-serif;
   font-size: 1rem;
   display: flex;
@@ -36,17 +30,19 @@ a {
   justify-content: space-between;
   padding: 1rem 0.3rem;
   /* background-color: #ed4c8b; */
-  position: fixed;
+  /* position: fixed; */
   width: 100%;
-  top: 0;
-  left: 0;
-  border: 5px solid blue;
-  z-index: -1;
+  /* top: 0; */
+  /* left: 0; */
+  /* border: 1px solid blue; */
+  /* z-index: -1; */
+  /* border: 2px solid blue; */
 }
 
 .header nav {
   display: flex;
   align-items: center;
+  /* border: 1px solid blue; */
 }
 
 nav div {
@@ -64,14 +60,16 @@ nav div {
 
 .main {
   font-family: 'Gill Sans', sans-serif;
-  border: 5px solid black;
+  /* border: 2px solid black; */
+  background-color: #fc5193;
 }
 
 .hero {
   height: 200px;
   background-color: #fc5193;
   display: flex;
-  margin-top: 3rem;
+  /* margin-top: 3rem; */
+  /* border: 1px solid brown; */
 }
 
 .hero div {
@@ -106,6 +104,8 @@ nav div {
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
+  /* border: 4px solid green; */
+  padding-bottom: 2rem;
 }
 
 .countryLink {
@@ -176,7 +176,7 @@ nav div {
   text-transform: uppercase;
 }
 
-@media all and (min-width: 768px) {
+/* @media all and (min-width: 768px) {
   html {
     font-size: 18px;
   }
@@ -191,4 +191,4 @@ nav div {
   .header {
     position: absolute;
   }
-}
+} */
