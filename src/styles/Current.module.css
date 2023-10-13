@@ -93,7 +93,8 @@ nav div {
   justify-content: center;
   flex-wrap: wrap;
   padding-bottom: 2rem;
-  min-height: calc(100svh - (51.5px + 200px));
+  /* min-height: calc(100svh - (51.5px + 200px)); */
+  /* border: 5px solid yellowgreen; */
 }
 
 .countryLink {
