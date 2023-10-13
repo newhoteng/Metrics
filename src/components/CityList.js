@@ -1,17 +1,13 @@
-// import Current from './components/Current';
-// import City from './City';
-// import styles from '../styles/Current.module.css';
-
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { BsArrowRightCircle, BsWind } from 'react-icons/bs';
 import styles from '../styles/Current.module.css';
 
-function City({ city }) {
+function City({ city, backgroundColor }) {
   const airQualityDesc = `aqi: ${city.aqi} - ${city.textValue}`;
 
   return (
-    <Link to={`/${city.name}`} state={{ pageTitle: 'pollutant concentration', city }} className={styles.countryLink}>
+    <Link to={`/${city.name}`} state={{ pageTitle: 'pollutant concentration', city }} className={styles.countryLink} style={{ backgroundColor }}>
       <BsArrowRightCircle className={styles.arrowCircle} />
       <BsWind className={styles.airIcon} style={{ color: `${city.colorIndicator}` }} />
       <div className={styles.linkText}>
@@ -53,6 +49,7 @@ const dataShape = PropTypes.shape({
 
 City.propTypes = {
   city: dataShape.isRequired,
+  backgroundColor: PropTypes.string.isRequired,
 };
 
 CityList.propTypes = {

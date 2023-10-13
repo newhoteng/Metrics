@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { getCurrentAQIs } from '../redux/current/currentSlice';
 import CityList from './CityList';
+import styles from '../styles/Current.module.css';
 
 export default function AirQDataContainer() {
   const { currentAQIs, isLoading, error } = useSelector((store) => store.currentAQIs);
@@ -17,12 +18,12 @@ export default function AirQDataContainer() {
     <>
       {/* display error message if data does not get fetched */}
       {error && (
-        <div style={{ padding: '3rem' }}>
-          <h1>Something went wrong, please reload the page</h1>
-        </div>
+        <h1 className={styles.countriesContainer}>
+          Something went wrong, please reload the page
+        </h1>
       )}
       {/* display 'Loading' or data when loading or fetched respectively */}
-      {isLoading ? <h1>Loading...</h1> : (
+      {isLoading ? <h1 className={styles.countriesContainer}>Loading...</h1> : (
         <CityList cities={currentAQIs} />
       )}
     </>

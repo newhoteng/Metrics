@@ -20,5 +20,5 @@ HeroSection.propTypes = {
 };
 
 HeroSection.defaultProps = {
-  image: '',
+  image: <></>,
 };
