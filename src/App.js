@@ -1,3 +1,4 @@
+// import { useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import HomePage from './components/HomePage';
@@ -5,6 +6,12 @@ import PollutantsPage from './components/PollutantsPage';
 import './App.css';
 
 function App() {
+  // useEffect(() => {
+  //   if (!currentAQIs.length) {
+  //     dispatch(getCurrentAQIs());
+  //   }
+  // }, [dispatch, currentAQIs]);
+
   return (
     <BrowserRouter>
       <Routes>

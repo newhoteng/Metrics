@@ -19,8 +19,10 @@ const textValues = {
   1: 'good', 2: 'fair', 3: 'moderate', 4: 'poor', 5: 'very poor',
 };
 const colorScheme = {
-  1: '#9cd84e', 2: '#facf38', 3: '#f99049', 4: '#f65e5f', 5: '#a070b6',
+  1: '#9cd84e', 2: '#facf38', 3: '#f99049', 4: '#9c91a1', 5: '#a070b6',
 };
+
+// #f65e5f
 
 const initialState = {
   currentAQIs: [],
