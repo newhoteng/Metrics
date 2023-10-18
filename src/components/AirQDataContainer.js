@@ -1,18 +1,18 @@
-import React, { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { getCurrentAQIs } from '../redux/current/currentSlice';
+import React from 'react';
+import { useSelector } from 'react-redux';
+// import { getCurrentAQIs } from '../redux/current/currentSlice';
 import CityList from './CityList';
 import styles from '../styles/Current.module.css';
 
 export default function AirQDataContainer() {
   const { currentAQIs, isLoading, error } = useSelector((store) => store.currentAQIs);
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
-  useEffect(() => {
-    if (!currentAQIs.length) {
-      dispatch(getCurrentAQIs());
-    }
-  }, [dispatch, currentAQIs]);
+  // useEffect(() => {
+  //   if (!currentAQIs.length) {
+  //     dispatch(getCurrentAQIs());
+  //   }
+  // }, [dispatch, currentAQIs]);
 
   return (
     <>

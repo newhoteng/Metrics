@@ -1,16 +1,22 @@
-// import { useEffect } from 'react';
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+// import { getCurrentAQIs } from '../redux/current/currentSlice'; useSelector,
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { getCurrentAQIs } from './redux/current/currentSlice';
 import Header from './components/Header';
 import HomePage from './components/HomePage';
 import PollutantsPage from './components/PollutantsPage';
 import './App.css';
 
 function App() {
-  // useEffect(() => {
-  //   if (!currentAQIs.length) {
-  //     dispatch(getCurrentAQIs());
-  //   }
-  // }, [dispatch, currentAQIs]);
+  // const { currentAQIs } = useSelector((store) => store.currentAQIs);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    // if (!currentAQIs.length) {
+    dispatch(getCurrentAQIs());
+    // }
+  }, [dispatch]);
 
   return (
     <BrowserRouter>
