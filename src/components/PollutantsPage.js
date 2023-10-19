@@ -1,24 +1,22 @@
-import { useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import { BsWind } from 'react-icons/bs';
 import HeroSection from './HeroSection';
 import PollutantsList from './PollutantsList';
 import styles from '../styles/Current.module.css';
 
 const PollutantsPage = () => {
-  // Try not fetching data again
-  const { currentAQIs } = useSelector((store) => store.currentAQIs);
-  const { cityName } = useParams();
+  const { city } = useLocation().state;
 
-  const selectedCity = currentAQIs.find((city) => city.name === cityName);
+  const {
+    name, aqi, textValue, colorIndicator,
+  } = city;
 
-  const mainText = cityName;
-  const secondaryText = `aqi: ${selectedCity?.aqi} - ${selectedCity?.textValue}`;
+  const secondaryText = `aqi: ${aqi} - ${textValue}`;
 
   return (
     <main className={styles.main}>
-      <HeroSection image={<BsWind className={styles.airIcon} style={{ color: `${selectedCity?.colorIndicator}` }} />} mainText={mainText} secondaryText={secondaryText} />
-      <PollutantsList city={selectedCity} />
+      <HeroSection image={<BsWind className={styles.airIcon} style={{ color: `${colorIndicator}` }} />} mainText={name} secondaryText={secondaryText} />
+      <PollutantsList city={city} />
     </main>
   );
 };

@@ -5,11 +5,12 @@ import styles from '../styles/Current.module.css';
 
 function City({ city, backgroundColor }) {
   const airQualityDesc = `aqi: ${city.aqi} - ${city.textValue}`;
+  const { name, colorIndicator } = city;
 
   return (
-    <Link to={`/${city.name}`} state={{ pageTitle: 'pollutant concentration', city }} className={styles.countryLink} style={{ backgroundColor }}>
+    <Link to={`/${name}`} state={{ pageTitle: 'pollutant concentration', city }} className={styles.countryLink} style={{ backgroundColor }}>
       <BsArrowRightCircle className={styles.arrowCircle} />
-      <BsWind className={styles.airIcon} style={{ color: `${city.colorIndicator}` }} />
+      <BsWind className={styles.airIcon} style={{ color: `${colorIndicator}` }} />
       <div className={styles.linkText}>
         <p>{city.name.toUpperCase()}</p>
         <p>{airQualityDesc}</p>
@@ -49,7 +50,11 @@ const dataShape = PropTypes.shape({
 
 City.propTypes = {
   city: dataShape.isRequired,
-  backgroundColor: PropTypes.string.isRequired,
+  backgroundColor: PropTypes.string,
+};
+
+City.defaultProps = {
+  backgroundColor: '',
 };
 
 CityList.propTypes = {
