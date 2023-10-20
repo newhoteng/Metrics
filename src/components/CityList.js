@@ -3,12 +3,12 @@ import PropTypes from 'prop-types';
 import { BsArrowRightCircle, BsWind } from 'react-icons/bs';
 import styles from '../styles/Current.module.css';
 
-function City({ city, backgroundColor }) {
+function City({ city, bgColor }) {
   const airQualityDesc = `aqi: ${city.aqi} - ${city.textValue}`;
   const { name, colorIndicator } = city;
 
   return (
-    <Link to={`/${name}`} state={{ pageTitle: 'pollutant concentration', city }} className={styles.countryLink} style={{ backgroundColor }}>
+    <Link to={`/${name}`} state={{ pageTitle: 'pollutant concentration', city }} className={styles.countryLink} style={{ backgroundColor: bgColor }}>
       <BsArrowRightCircle className={styles.arrowCircle} />
       <BsWind className={styles.airIcon} style={{ color: `${colorIndicator}` }} />
       <div className={styles.linkText}>
@@ -20,11 +20,23 @@ function City({ city, backgroundColor }) {
 }
 
 export default function CityList({ cities }) {
+  const bgColorOptions = ['#dd4782', '#cf4378'];
+  let currentColorIndex = false;
+
+  const CityTiles = [];
+  // Logic to add two column grid checked design
+  cities.forEach((city, index) => {
+    if (index % 2 === 1) currentColorIndex = !currentColorIndex;
+    CityTiles.push(
+      <City key={city.id} city={city} bgColor={bgColorOptions[Number(currentColorIndex)]} />,
+    );
+  });
+
   return (
     <section>
       <div className={styles.banner}>INDEX BY CITY</div>
       <div className={styles.countriesContainer}>
-        {cities.map((city) => <City key={city.id} city={city} />)}
+        {CityTiles}
       </div>
     </section>
   );
@@ -50,11 +62,11 @@ const dataShape = PropTypes.shape({
 
 City.propTypes = {
   city: dataShape.isRequired,
-  backgroundColor: PropTypes.string,
+  bgColor: PropTypes.string,
 };
 
 City.defaultProps = {
-  backgroundColor: '',
+  bgColor: '',
 };
 
 CityList.propTypes = {

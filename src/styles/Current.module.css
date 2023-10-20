@@ -106,18 +106,6 @@ nav div {
   padding: 1.5rem 0.8rem;
 }
 
-.countriesContainer .countryLink:nth-child(1),
-.countriesContainer .countryLink:nth-child(4),
-.countriesContainer .countryLink:nth-child(5) {
-  background-color: #dd4782;
-}
-
-.countriesContainer .countryLink:nth-child(2),
-.countriesContainer .countryLink:nth-child(3),
-.countriesContainer .countryLink:nth-child(6) {
-  background-color: #cf4378;
-}
-
 .arrowCircle {
   position: absolute;
   top: 0.8rem;
