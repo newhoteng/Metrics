@@ -9,8 +9,10 @@ export default function AirQDataContainer() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getCurrentAQIs());
-  }, [dispatch]);
+    if (!currentAQIs.length) {
+      dispatch(getCurrentAQIs());
+    }
+  }, [dispatch, currentAQIs]);
 
   return (
     <>
