@@ -21,7 +21,6 @@ const textValues = {
 const colorScheme = {
   1: '#9cd84e', 2: '#facf38', 3: '#f99049', 4: '#9c91a1', 5: '#a070b6',
 };
-
 // #f65e5f
 
 const initialState = {
@@ -51,8 +50,7 @@ export const getCurrentAQIs = createAsyncThunk('currentAQIs/getCurrentAQIs', asy
 const currentSlice = createSlice({
   name: 'currentAQIs',
   initialState,
-  reducers: {
-  },
+  reducers: {},
   extraReducers: (builder) => {
     // getCurrentAQIs
     builder.addCase(getCurrentAQIs.pending, (state) => {
