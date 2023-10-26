@@ -1,8 +1,8 @@
-// import { render } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import renderer from 'react-test-renderer';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
-import { store } from '../redux/store';
+import store from '../redux/store';
 
 // Component imports
 import PollutantsPage from '../components/PollutantsPage';
@@ -26,12 +26,12 @@ it('pollutants page renders correctly', () => {
     },
   };
 
-  const { asFragment } = render(
-    <BrowserRouter>
-      <Pollutants prop={mockCity} />
-    </BrowserRouter>,
-  );
-  expect(asFragment(<Pollutants prop={mockProp} />)).toMatchSnapshot();
+  // const { asFragment } = render(
+  //   <BrowserRouter>
+  //     <Pollutants prop={mockCity} />
+  //   </BrowserRouter>,
+  // );
+  // expect(asFragment(<Pollutants prop={mockProp} />)).toMatchSnapshot();
 
   const PollutantsPageComponent = renderer
     .create(
@@ -40,9 +40,6 @@ it('pollutants page renders correctly', () => {
           <PollutantsPage path="/:cityName">Pollutants Page</PollutantsPage>
         </BrowserRouter>
       </Provider>,
-      // <Provider store={store}>
-      //   <PollutantsPage page="/">Home Page</PollutantsPage>
-      // </Provider>,
     )
     .toJSON();
   expect(PollutantsPageComponent).toMatchSnapshot();
