@@ -105,3 +105,51 @@ it('pollutants page renders correctly', () => {
 //     expect(getByText(mockProp.name)).toBeInTheDocument();
 //   });
 // });
+
+
+// const mockStore = configureStore([thunk]);
+
+// jest.setTimeout(15000);
+
+// describe('Current component', () => {
+//   test('renders correctly', async () => {
+//     const store = mockStore({
+//       currentAQIs: {
+//         currentAQIs: [],
+//       },
+//     });
+
+//     // Dispatch the asynchronous action
+//     await store.dispatch(getCurrentAQIs());
+
+//     const { container } = render(
+//       <Provider store={store}>
+//         <BrowserRouter>
+//           <Current />
+//         </BrowserRouter>
+//       </Provider>,
+//     );
+
+//     expect(container).toMatchSnapshot();
+//   });
+// });
+
+
+test('home page renders correctly', () => {
+  const HomePageComponent = renderer
+    .create(
+      <Provider store={store}>
+        <HomePage page="/">Home Page</HomePage>
+      </Provider>,
+    )
+    .toJSON();
+  expect(HomePageComponent).toMatchSnapshot();
+});
+
+// it('renders Current component', () => {
+//   render(
+//     <Provider store={store}>
+//       <Current />
+//     </Provider>,
+//   );
+// });
